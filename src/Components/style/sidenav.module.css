@@ -1,0 +1,56 @@
+.Sidenav {
+    width: 60px; 
+    height: 100vh; 
+    background-color: #1d1f1f; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 16px 0;
+    box-sizing: border-box;
+    border-right: 1px solid #343535;
+}
+
+.topsection, 
+.bottomsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.Sidenav button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #a4a5a5; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+.Sidenav button svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.Sidenav button:hover {
+    background-color: #343535;
+    color: #fafafa;
+}
+
+/* Profile image styling */
+.profile_img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
