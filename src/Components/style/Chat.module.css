@@ -39,7 +39,7 @@
 .userInfo h3 {
     margin: 0;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 800;
     color: #fafafa;
 }
 
@@ -118,12 +118,28 @@
 
 .incomingWrapper {
     justify-content: flex-start;
+    flex-direction: row; /* Aligns avatar left, text right */
+    gap: 8px;
 }
 
 .outgoingWrapper {
     justify-content: flex-end;
 }
+.imojIncoming {
+    order: 2;
+}
 
+.imojOutgoing {
+    order: 0;
+}
+
+.imoj {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 0px;
+    color: #8696a0;
+    cursor: pointer;
+}
 /* Absolute Bubble Properties */
 .bubble {
     max-width: 65%;
@@ -209,3 +225,12 @@
 .sendActionButton:hover {
     background-color: #2d2e2e;
 }
+/* .imoj{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.icon{
+    color: #ababab;
+    cursor: pointer;
+} */
