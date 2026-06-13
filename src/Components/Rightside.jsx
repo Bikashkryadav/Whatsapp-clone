@@ -22,7 +22,6 @@ function Rightside({ page = "default" }) {
                     </div>
                 )}
 
-                {/* Active Chat View (Fixed the & to &&) */}
             </div>
             {page === "chat" && (
                 <Chat />

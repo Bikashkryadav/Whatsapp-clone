@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from "./style/Listchat.module.css"
 import { LuSquarePlus, LuSearch } from 'react-icons/lu' 
 import { FiMoreVertical } from 'react-icons/fi'
+import { IoPersonSharp } from 'react-icons/io5';
 
 function Listchat() {
     // 1. Added a 'favorite' property to our dummy data
@@ -31,7 +32,7 @@ function Listchat() {
             {/* Header section */}
             <header className={style.header}>
                 <div className={style.left_header}>
-                    <h2>Chats</h2>
+                    <h2>WhatsApp</h2>
                 </div>
                 <div className={style.right_header}>
                     <button aria-label="New chat"><LuSquarePlus /></button>
@@ -80,7 +81,7 @@ function Listchat() {
                 {filteredChats.length > 0 ? (
                     filteredChats.map((chat) => (
                         <div key={chat.id} className={style.chatItem}>
-                            <div className={style.avatar}>{chat.name[0]}</div>
+                            <div className={style.avatar}><IoPersonSharp size={20} /></div>
                             <div className={style.chatInfo}>
                                 <div className={style.chatRow}>
                                     <span className={style.name}>{chat.name}</span>

@@ -57,7 +57,7 @@
     align-items: center;
     background-color:#2d2e2e; /* Slightly lighter than the main bg */
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 40px;
     gap: 12px;
 }
 
@@ -87,26 +87,26 @@
 }
 
 .filterPill {
-    background-color: #202222;
+    background: none;
     border: none;
-    padding: 6px 16px;
+    padding: 6px 11px;
     border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #8696a0;
+    border: 1px solid #2d2e2e;
+    font-size: 15px;
+    font-weight: 800;
+    color: #a0a0a0;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .filterPill:hover {
     background-color: #2d2e2e;
-    color: #fafafa;
 }
 
 /* Active filter state matching WhatsApp dark mode green accents */
 .activePill {
     background-color: #0a332c; 
-    color: #00a884;
+    color: #d9fdd3;
     font-weight: 600;
 }
 
