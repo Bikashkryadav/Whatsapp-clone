@@ -1,0 +1,258 @@
+.authPageContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #111414; /* Deep immersive app background backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* --- Add/Replace these style sections inside Auth.module.css --- */
+
+.phoneFieldsRow {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.countrySelectWrapper {
+    background-color: #242626;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border: 1px solid transparent;
+    max-width: 130px;
+}
+
+.countrySelectWrapper:focus-within {
+    border-color: #00a884;
+}
+
+.countryDropdown {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fafafa;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Style the popup dropdown options for browsers that render standard HTML selectors */
+.countryDropdown option {
+    background-color: #161717;
+    color: #fafafa;
+    padding: 10px;
+}
+
+/* Make sure the input wrapper component stretches out smoothly alongside the select block */
+.phoneFieldsRow .inputWrapper {
+    flex: 1;
+}
+.authCard {
+    width: 100%;
+    max-width: 420px;
+    background-color: #161717; /* Matches main list layout container */
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2d2e2e;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.authHeader {
+    margin-bottom: 28px;
+}
+
+.brandLogo {
+    width: 60px;
+    height: 60px;
+    background-color: #00a884; /* Active theme signature green color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 16px auto;
+}
+
+.authHeader h2 {
+    color: #fafafa;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.authHeader p {
+    color: #8696a0;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Alert Notification Panel Styling */
+.errorBanner {
+    background-color: #5a1a1a;
+    color: #ff9494;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid #7d2626;
+}
+
+/* Form Structural Alignment */
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    background-color: #242626; /* Matches the text field container background style */
+    border-radius: 8px;
+    padding: 12px 16px;
+    gap: 14px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+    border-color: #00a884; /* Highlighting active focus border status */
+}
+
+.inputIcon {
+    color: #8696a0;
+    font-size: 20px;
+}
+
+.inputWrapper input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #fafafa;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.inputWrapper input::placeholder {
+    color: #667781;
+}
+
+/* Form Submission Action Elements */
+.authButton {
+    background-color: #00a884;
+    color: #111414;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.authButton:hover {
+    background-color: #008769;
+}
+
+.backLinkButton {
+    background: none;
+    border: none;
+    color: #8696a0;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 8px;
+    align-self: center;
+    transition: color 0.2s ease;
+}
+
+.backLinkButton:hover {
+    color: #fafafa;
+}
+/* --- Append these styles to your Auth.module.css file --- */
+
+/* Avatar Uploader UI Layout */
+.avatarUploadContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.avatarLabel {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #242626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #4a4b4b;
+    transition: all 0.2s ease;
+}
+
+.avatarLabel:hover {
+    border-color: #00a884;
+}
+
+.avatarFallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8696a0;
+}
+
+.cameraIcon {
+    font-size: 32px;
+}
+
+.avatarImagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Smooth dark dim overlay text on mouse hover */
+.cameraHoverOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cameraHoverOverlay span {
+    color: #fafafa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.avatarLabel:hover .cameraHoverOverlay {
+    opacity: 1;
+}
+
+.hiddenFileInput {
+    display: none; /* Keeps native clunky input element completely hidden */
+}
