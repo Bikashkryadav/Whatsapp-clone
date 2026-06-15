@@ -1,6 +1,9 @@
 import React from 'react'
 import style from "./style/middle.module.css"
 import Chatslist from './chatslist';
+import { LuSquarePlus } from 'react-icons/lu';
+import { FiMoreVertical } from 'react-icons/fi';
+import Status from './Status';
 
 function Listchat({ middlepage }) {
     console.log("Active middle view:", middlepage);
@@ -11,10 +14,7 @@ function Listchat({ middlepage }) {
             {middlepage === "Chats" && <Chatslist />}
 
             {middlepage === "Status" && (
-                <div className={style.placeholderView}>
-                    <h2>Status</h2>
-                    <p>View updates from your contacts here.</p>
-                </div>
+                <Status/>
             )}
 
             {middlepage === "Channels" && (
