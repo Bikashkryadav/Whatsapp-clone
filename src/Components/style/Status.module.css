@@ -1,6 +1,8 @@
-.placeholderView{
+.placeholderView {
     padding: 0px 10px;
+    box-sizing: border-box;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -9,7 +11,7 @@
 
 .left_header h2 {
     font-size: 22px;
-    font-weight: light;
+    font-weight: 700;
     margin: 0;
 }
 
@@ -18,13 +20,12 @@
     gap: 12px;
 }
 
-.right_header button {
+.btn {
     background: none;
     border: none;
     padding: 6px;
     cursor: pointer;
-    color: white;
-    /* Brighter muted color for dark mode readability */
+    color: #8696a0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +34,111 @@
     transition: background-color 0.2s, color 0.2s;
 }
 
-.right_header button:hover {
+.btn:hover {
     background-color: #343535;
     color: #fafafa;
+}
+
+/* Structural Body Settings */
+.statusContent {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.profileSection, .statusRowItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.profileSection:hover, .statusRowItem:hover {
+    background-color: #2d2e2e;
+}
+
+/* Avatar Layout and Plus Badge Positioning */
+.myStatusRing {
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+.avatarPlaceholder {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #54656f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+}
+
+.plusBadge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #00a884;
+    color: #161717;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    border: 2px solid #161717;
+}
+
+/* Text Configurations */
+.statusTextDetails h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fafafa;
+}
+
+.statusTextDetails span {
+    font-size: 13px;
+    color: #8696a0;
+}
+
+.timeSpan {
+    font-size: 12px !important;
+}
+
+/* Section Separator Line */
+.sectionDivider {
+    padding: 20px 10px 10px 10px;
+}
+
+.sectionDivider span {
+    font-size: 10px;
+    font-weight: 400;
+    color: #f9fcfb;
+    letter-spacing: 0.5px;
+}
+
+/* Status Green/Gray Ring Indicators */
+.statusRing {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+}
+
+.unviewed {
+    border-color: #00a884; /* WhatsApp bright green circle indicator */
+}
+
+.viewed {
+    border-color: #343535; /* Dark grayed-out indicator for seen updates */
 }
