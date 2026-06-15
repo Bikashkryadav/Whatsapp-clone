@@ -1,0 +1,35 @@
+.ListchatContainer {
+    min-width: 450px;
+    height: 100vh;
+    background-color: #161717;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #2d2e2e; /* Muted dark border instead of light #e9edef */
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+/* Placeholder screens styling */
+.placeholderView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.placeholderView h2 {
+    font-size: 22px;
+    color: #fafafa;
+    margin-bottom: 8px;
+}
+
+.placeholderView p {
+    font-size: 14px;
+    color: #8696a0;
+    max-width: 280px;
+    line-height: 1.4;
+}

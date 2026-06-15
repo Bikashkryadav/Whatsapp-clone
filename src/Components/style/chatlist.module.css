@@ -1,102 +1,91 @@
-.ListchatContainer {
-    min-width: 450px;
-    height: 100vh;
-    background-color: #161717;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #2d2e2e; /* Muted dark border instead of light #e9edef */
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-}
 
 .header {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+height: 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .left_header h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0;
+font-size: 22px;
+font-weight: 700;
+margin: 0;
 }
 
 .right_header {
-    display: flex;
-    gap: 12px;
+display: flex;
+gap: 12px;
 }
 
 .right_header button {
-    background: none;
-    border: none;
-    padding: 6px;
-    cursor: pointer;
-    color: white; /* Brighter muted color for dark mode readability */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 20px;
-    transition: background-color 0.2s, color 0.2s;
+background: none;
+border: none;
+padding: 6px;
+cursor: pointer;
+color: white; /* Brighter muted color for dark mode readability */
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+font-size: 20px;
+transition: background-color 0.2s, color 0.2s;
 }
 
 .right_header button:hover {
-    background-color: #343535;
-    color: #fafafa;
+background-color: #343535;
+color: #fafafa;
 }
 
 /* --- Search Bar Section --- */
 .searchContainer {
-    padding: 8px 0; /* Left/Right padding handled by parent container */
+padding: 8px 0; /* Left/Right padding handled by parent container */
 }
 
 .searchWrapper {
-    display: flex;
-    align-items: center;
-    background-color:#2d2e2e; /* Slightly lighter than the main bg */
-    padding: 12px;
-    border-radius: 40px;
-    gap: 12px;
+display: flex;
+align-items: center;
+background-color:#2d2e2e; /* Slightly lighter than the main bg */
+padding: 12px;
+border-radius: 40px;
+gap: 12px;
 }
 
 .searchIcon {
-    color: #8696a0;
-    font-size: 18px;
+color: #8696a0;
+font-size: 18px;
 }
 
 .searchInput {
-    border: none;
-    background: none;
-    width: 100%;
-    outline: none;
-    font-size: 14px;
-    color: #fafafa;
+border: none;
+background: none;
+width: 100%;
+outline: none;
+font-size: 14px;
+color: #fafafa;
 }
 
 .searchInput::placeholder {
-    color: #8696a0;
+color: #8696a0;
 }
 
 /* --- Filter Navigation Section --- */
 .filterContainer {
-    display: flex;
-    gap: 8px;
-    padding: 10px 0;
+display: flex;
+gap: 8px;
+padding: 10px 0;
 }
 
 .filterPill {
-    background: none;
-    border: none;
-    padding: 6px 11px;
-    border-radius: 20px;
-    border: 1px solid #2d2e2e;
-    font-size: 15px;
-    font-weight: 800;
-    color: #a0a0a0;
-    cursor: pointer;
-    transition: all 0.2s ease;
+background: none;
+border: none;
+padding: 6px 11px;
+border-radius: 20px;
+border: 1px solid #2d2e2e;
+font-size: 15px;
+font-weight: 800;
+color: #a0a0a0;
+cursor: pointer;
+transition: all 0.2s ease;
 }
 
 .filterPill:hover {

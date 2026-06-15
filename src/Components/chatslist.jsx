@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import style from "./style/Listchat.module.css"
+import style from "./style/chatlist.module.css"
 import { LuSquarePlus, LuSearch } from 'react-icons/lu' 
 import { FiMoreVertical } from 'react-icons/fi'
 import { IoPersonSharp } from 'react-icons/io5';
-
-function Listchat() {
-    // 1. Added a 'favorite' property to our dummy data
-    const dummyChats = [
+function Chatslist() {
+     const dummyChats = [
         { id: 1, name: 'Alex', message: 'Hey, are we still on for today?', time: '11:45 AM', unread: 2, favorite: false },
         { id: 2, name: 'Project Group', message: 'Updated the repository', time: '10:12 AM', unread: 0, favorite: true },
         { id: 3, name: 'Sarah', message: 'Got it, thanks!', time: 'Yesterday', unread: 0, favorite: true },
@@ -26,10 +24,8 @@ function Listchat() {
         if (activeFilter === "favorites") return chat.favorite;
         return true; // 'all'
     });
-
     return (
-        <div className={style.ListchatContainer}>
-            {/* Header section */}
+        <>
             <header className={style.header}>
                 <div className={style.left_header}>
                     <h2>WhatsApp</h2>
@@ -44,8 +40,8 @@ function Listchat() {
             <div className={style.searchContainer}>
                 <div className={style.searchWrapper}>
                     <LuSearch className={style.searchIcon} />
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Search or start a new chat"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -56,19 +52,19 @@ function Listchat() {
 
             {/* Filter Navigation Pills */}
             <div className={style.filterContainer}>
-                <button 
+                <button
                     className={`${style.filterPill} ${activeFilter === 'all' ? style.activePill : ''}`}
                     onClick={() => setActiveFilter('all')}
                 >
                     All
                 </button>
-                <button 
+                <button
                     className={`${style.filterPill} ${activeFilter === 'unread' ? style.activePill : ''}`}
                     onClick={() => setActiveFilter('unread')}
                 >
                     Unread
                 </button>
-                <button 
+                <button
                     className={`${style.filterPill} ${activeFilter === 'favorites' ? style.activePill : ''}`}
                     onClick={() => setActiveFilter('favorites')}
                 >
@@ -100,8 +96,8 @@ function Listchat() {
                     <div className={style.noChats}>No chats found</div>
                 )}
             </div>
-        </div>
+        </>
     )
 }
 
-export default Listchat
+export default Chatslist

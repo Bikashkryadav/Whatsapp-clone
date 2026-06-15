@@ -54,3 +54,7 @@
     object-fit: cover;
     cursor: pointer;
 }
+.activeButton {
+    color: #00a884 !important; /* Forces your signature green color on the active icon */
+    background-color: #2d2e2e !important; /* Subtle background container highlight */
+}

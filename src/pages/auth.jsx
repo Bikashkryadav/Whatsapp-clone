@@ -5,24 +5,24 @@ import { LuPhone, LuShieldCheck, LuArrowRight, LuUser, LuFileText, LuCamera } fr
 function Auth({ onAuthSuccess }) {
     // 1. Extended state steps: 'phone' | 'otp' | 'profile'
     const [step, setStep] = useState('phone'); 
-    const [countryCode, setCountryCode] = useState('+1');
+    const [countryCode, setCountryCode] = useState('+977');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [otp, setOtp] = useState('');
     
     // 2. New Profile Onboarding State
     const [fullName, setFullName] = useState('');
-    const [bio, setBio] = useState('Hey there! I am using ChatApp.'); // Default WhatsApp bio style
+    const [bio, setBio] = useState('Hey there! I am using ChatApp.'); 
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState('');
     
     const [error, setError] = useState('');
 
     const countryCodes = [
-        { code: '+1', name: '🇺🇸 US/CA' },
+        { code: '+977', name: '🇳🇵 NP' },
         { code: '+44', name: '🇬🇧 UK' },
         { code: '+91', name: '🇮🇳 IN' },
         { code: '+61', name: '🇦🇺 AU' },
-        { code: '+977', name: '🇳🇵 NP' },
+        { code: '+1', name: '🇺🇸 US/CA' },
         { code: '+971', name: '🇦🇪 AE' },
         { code: '+33', name: '🇫🇷 FR' },
         { code: '+49', name: '🇩🇪 DE' },
