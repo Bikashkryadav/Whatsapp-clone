@@ -1,5 +1,5 @@
 .chatWindowContainers {
-    background-image: url("https://imgs.search.brave.com/DxufaVwfbG7201hpsfIdobNMty7-eHtDvfQ1c8If4kw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzNkL2Y0/LzM3LzNkZjQzNzky/MjkzMGNmMmUyY2Ji/ZTlmNWIyMjEzMmQz/LmpwZw");
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     width: 100%;
