@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import style from "./style/Chat.module.css"
 import { LuSearch, LuSmile, LuPaperclip, LuSend } from 'react-icons/lu'
 import { HiOutlinePhone } from 'react-icons/hi'
-import { IoPersonSharp } from 'react-icons/io5'
+import { IoCheckmarkSharp, IoPersonSharp } from 'react-icons/io5'
 import { FaRegFaceGrin } from 'react-icons/fa6'
 
 function Chat() {
@@ -79,7 +79,8 @@ function Chat() {
                         {/* Text Message Card Bubble */}
                         <div className={`${style.bubble} ${msg.sentByMe ? style.outgoing : style.incoming}`}>
                             <p className={style.messageText}>{msg.text}</p>
-                            <span className={style.messageTime}>{msg.time}</span>
+                            <span className={style.messageTime}>{msg.time}{msg.sentByMe&&(<IoCheckmarkSharp size={12} />)}</span>
+                            {/* <IoCheckmarkDoneSharp /> */}
                         </div>
                     </div>
                 ))}
