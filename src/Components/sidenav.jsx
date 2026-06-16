@@ -60,7 +60,7 @@ function Sidenav({ setActivePage="Chats" }) {
             <div className={style.bottomsection}>
                 <button 
                     aria-label="Media" 
-                    className={navvalue === "Media" ? style.activeButton : ""} 
+                    className={navvalue === "Media" ? style.activeButton : ""}
                     onClick={() => handleNavClick("Media")}
                 >
                     <FaRegImages />
