@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from "./style/Status.module.css"
 import { FiMoreVertical } from 'react-icons/fi'
 import { LuCirclePlus } from 'react-icons/lu'
+import { CiLock } from 'react-icons/ci'
 
 function Status() {
     // Simulated list of status updates from friends
+    const [menubar, setmenubar] = useState(false)
     const updates = [
         { id: 1, name: "Alex", time: "35 minutes ago", initial: "A", viewed: false },
         { id: 2, name: "Sarah", time: "Today, 4:12 PM", initial: "S", viewed: true },
@@ -20,7 +22,15 @@ function Status() {
                 </div>
                 <div className={style.right_header}>
                     <button className={style.btn} aria-label="Add Status"><LuCirclePlus /></button>
-                    <button className={style.btn} aria-label="More options"><FiMoreVertical /></button>
+                    <button className={style.btn} onClick={() => { setmenubar(!menubar) }} aria-label="More options"><FiMoreVertical /></button>
+                    {menubar && (
+                        <div className={style.menuDropdownCard}>
+                            <button className={style.menu_btn}>
+                                <CiLock size={30} /> {/* Reduced size slightly to match standard icon proportions */}
+                                <span>Status Privacy</span>
+                            </button>
+                        </div>
+                    )}
                 </div>
             </header>
 
