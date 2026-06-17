@@ -3,10 +3,13 @@ import style from "./style/Status.module.css"
 import { FiMoreVertical } from 'react-icons/fi'
 import { LuCirclePlus } from 'react-icons/lu'
 import { CiLock } from 'react-icons/ci'
+import { FaRegImages } from 'react-icons/fa'
+import { RiPencilLine } from 'react-icons/ri'
 
 function Status() {
     // Simulated list of status updates from friends
     const [menubar, setmenubar] = useState(false)
+    const [addbar, setaddbar] = useState(false)
     const updates = [
         { id: 1, name: "Alex", time: "35 minutes ago", initial: "A", viewed: false },
         { id: 2, name: "Sarah", time: "Today, 4:12 PM", initial: "S", viewed: true },
@@ -21,23 +24,36 @@ function Status() {
                     <h2>Status</h2>
                 </div>
                 <div className={style.right_header}>
-                    <button className={style.btn} aria-label="Add Status"><LuCirclePlus /></button>
+                    <button className={style.btn} onClick={() => { setaddbar(!addbar) }} aria-label="Add Status"><LuCirclePlus /></button>
+                    {addbar && (
+                        < div className={style.menuDropdownCard}>
+                            <button className={style.menu_btn}>
+                                <RiPencilLine />
+                                <span>Photo & video</span>
+                            </button>
+                            <button className={style.menu_btn}>
+                                <FaRegImages />
+                                <span>Text</span>
+                            </button>
+                        </div>
+                    )}
                     <button className={style.btn} onClick={() => { setmenubar(!menubar) }} aria-label="More options"><FiMoreVertical /></button>
                     {menubar && (
                         <div className={style.menuDropdownCard}>
                             <button className={style.menu_btn}>
-                                <CiLock size={30} /> {/* Reduced size slightly to match standard icon proportions */}
+                                <CiLock size={30} /> 
                                 <span>Status Privacy</span>
                             </button>
                         </div>
                     )}
+
                 </div>
-            </header>
+            </header >
 
             {/* Scrollable container zone */}
-            <div className={style.statusContent}>
+            < div className={style.statusContent} >
                 {/* My Status Section */}
-                <div className={style.profileSection}>
+                < div className={style.profileSection} >
                     <div className={style.myStatusRing}>
                         <div className={style.avatarPlaceholder}>M</div>
                         <div className={style.plusBadge}>+</div>
@@ -46,30 +62,32 @@ function Status() {
                         <h3>My Status</h3>
                         <span>Click to add status update</span>
                     </div>
-                </div>
+                </div >
 
                 {/* Subheading Splitter Section */}
-                <div className={style.sectionDivider}>
+                < div className={style.sectionDivider} >
                     <span>RECENT UPDATES</span>
-                </div>
+                </div >
 
                 {/* Recent Updates Context Stream */}
-                <div className={style.updatesList}>
-                    {updates.map((user) => (
-                        <div key={user.id} className={style.statusRowItem}>
-                            {/* Green ring when unviewed, muted when viewed */}
-                            <div className={`${style.statusRing} ${user.viewed ? style.viewed : style.unviewed}`}>
-                                <div className={style.avatarPlaceholder}>{user.initial}</div>
+                < div className={style.updatesList} >
+                    {
+                        updates.map((user) => (
+                            <div key={user.id} className={style.statusRowItem}>
+                                {/* Green ring when unviewed, muted when viewed */}
+                                <div className={`${style.statusRing} ${user.viewed ? style.viewed : style.unviewed}`}>
+                                    <div className={style.avatarPlaceholder}>{user.initial}</div>
+                                </div>
+                                <div className={style.statusTextDetails}>
+                                    <h3>{user.name}</h3>
+                                    <span className={style.timeSpan}>{user.time}</span>
+                                </div>
                             </div>
-                            <div className={style.statusTextDetails}>
-                                <h3>{user.name}</h3>
-                                <span className={style.timeSpan}>{user.time}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+                        ))
+                    }
+                </div >
+            </div >
+        </div >
     )
 }
 
