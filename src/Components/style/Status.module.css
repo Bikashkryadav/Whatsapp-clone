@@ -23,18 +23,54 @@
 
 .menuDropdownCard {
     position: absolute;
-    top: 100%;
-    left: 90%;
+    top: 100%; 
+    right: 10px;
+    border-radius: 18px;
+    border: 1px solid #2d2e2e;
     background-color: #161717;
-    border: 1px solid #2b2b2b;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     z-index: 200;
     animation: fadeIn 0.15s ease-out;
-    padding: 5px ;
+    padding: 6px; /* Creates vertical breathing room inside the card container */
+    min-width: 160px; /* Ensures text doesn't squeeze together layout-wise */
 }
 
 .menu_btn {
+    width: 100%; /* Makes the clickable button container span across the full card width */
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px; /* Adds space between your lock icon and the text */
+    padding: 10px 16px; /* Comfortable click targets for mobile and desktop cursors */
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+/* Subtle hover effect to clearly show selection states */
+.menu_btn:hover {
+    background-color: #2d2e2e;
+}
+
+/* Entry fade-in script mapping */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* .menu_btn {
     background: none;
     border: none;
     outline: none;
@@ -49,7 +85,7 @@
 }
 .menu_btn:hover{
     background-color: #343535;
-} 
+}  */
 
 .btn {
     background: none;
