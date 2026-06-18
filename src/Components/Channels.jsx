@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from "./style/Channels.module.css"
 import { FiMoreVertical } from 'react-icons/fi'
 import { LuPlus } from 'react-icons/lu'
 
 function Channels() {
-    // Simulated list of joined/suggested channels
+    const [addmenu, setaddmenu] = useState(false)
+
     const channelsData = [
         { id: 1, name: "JavaScript Community", followers: "2.4M followers", initial: "JS", verified: true },
         { id: 2, name: "React Core Updates", followers: "1.8M followers", initial: "R", verified: true },
@@ -13,14 +14,18 @@ function Channels() {
 
     return (
         <div className={style.ChannelsContainer}>
-            {/* Header Section */}
+            
             <header className={style.header}>
                 <div className={style.left_header}>
                     <h2>Channels</h2>
                 </div>
                 <div className={style.right_header}>
                     <button className={style.btn} aria-label="Create Channel"><LuPlus /></button>
-                    <button className={style.btn} aria-label="More options"><FiMoreVertical /></button>
+                    {addmenu&& (
+                        <div className={style.menuWrapper}>
+                            <button></button>
+                        </div>
+                    )}
                 </div>
             </header>
 
