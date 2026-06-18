@@ -2,9 +2,18 @@ import React, { useState } from 'react'
 import style from "./style/Channels.module.css"
 import { FiMoreVertical } from 'react-icons/fi'
 import { LuPlus } from 'react-icons/lu'
+import { LuRadio } from 'react-icons/lu' // Added a clean channel/broadcast icon
+import { MdOutlineExplore } from 'react-icons/md'
 
 function Channels() {
     const [addmenu, setaddmenu] = useState(false)
+    const [moremenu, setmoremenu] = useState(false)
+
+    // Closes all dropdowns when clicking anywhere outside
+    const handleCloseMenus = () => {
+        setaddmenu(false);
+        setmoremenu(false);
+    }
 
     const channelsData = [
         { id: 1, name: "JavaScript Community", followers: "2.4M followers", initial: "JS", verified: true },
@@ -13,19 +22,64 @@ function Channels() {
     ];
 
     return (
-        <div className={style.ChannelsContainer}>
+        <div className={style.ChannelsContainer} onClick={handleCloseMenus}>
             
             <header className={style.header}>
                 <div className={style.left_header}>
                     <h2>Channels</h2>
                 </div>
+                
                 <div className={style.right_header}>
-                    <button className={style.btn} aria-label="Create Channel"><LuPlus /></button>
-                    {addmenu&& (
-                        <div className={style.menuWrapper}>
-                            <button></button>
-                        </div>
-                    )}
+                    {/* 1. Add/Create Channel Menu Pair */}
+                    <div className={style.menuWrapper}>
+                        <button 
+                            className={style.btn} 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setaddmenu(!addmenu);
+                                setmoremenu(false);
+                            }}
+                            aria-label="Create Channel"
+                        >
+                            <LuPlus />
+                        </button>
+                        
+                        {addmenu && (
+                            <div className={style.menuDropdownCard} onClick={(e) => e.stopPropagation()}>
+                                <button className={style.menu_btn}>
+                                    <LuRadio />
+                                    <span>Create Channel</span>
+                                </button>
+                                <button className={style.menu_btn}>
+                                    <MdOutlineExplore />
+                                    <span>Discover Channels</span>
+                                </button>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* 2. More Options Menu Pair */}
+                    <div className={style.menuWrapper}>
+                        <button 
+                            className={style.btn} 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setmoremenu(!moremenu);
+                                setaddmenu(false);
+                            }}
+                            aria-label="More options"
+                        >
+                            <FiMoreVertical />
+                        </button>
+                        
+                        {moremenu && (
+                            <div className={style.menuDropdownCard} onClick={(e) => e.stopPropagation()}>
+                                <button className={style.menu_btn}>
+                                    <span>Channel Settings</span>
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </header>
 
