@@ -185,7 +185,7 @@
     flex-direction: column;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     z-index: 200;
-    padding: 6px 0;
+    padding: 6px ;
     min-width: 170px;
     animation: fadeIn 0.15s ease-out;
     border: 1px solid #2d2e2e;
@@ -206,6 +206,7 @@
     font-size: 14px;
     transition: background-color 0.2s ease;
     text-align: left;
+    border-radius: 10px;
 }
 
 .menu_btn:hover {
