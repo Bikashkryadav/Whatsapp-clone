@@ -70,22 +70,6 @@
         transform: translateY(0);
     }
 }
-/* .menu_btn {
-    background: none;
-    border: none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #fafafa;
-    font-size: 14.5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-.menu_btn:hover{
-    background-color: #343535;
-}  */
 
 .btn {
     background: none;
