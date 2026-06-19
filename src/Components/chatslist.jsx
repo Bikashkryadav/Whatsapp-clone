@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import style from "./style/chatlist.module.css"
-import { LuSquarePlus, LuSearch } from 'react-icons/lu' 
+import { LuSquarePlus, LuSearch } from 'react-icons/lu'
 import { FiMoreVertical } from 'react-icons/fi'
 import { IoPersonSharp } from 'react-icons/io5';
 function Chatslist() {
-     const dummyChats = [
+    const [Menu, setMenu] = useState(false)
+    const handelfalse = () => {
+        setMenu(false)
+    }
+    const dummyChats = [
         { id: 1, name: 'Alex', message: 'Hey, are we still on for today?', time: '11:45 AM', unread: 2, favorite: false },
         { id: 2, name: 'Project Group', message: 'Updated the repository', time: '10:12 AM', unread: 0, favorite: true },
         { id: 3, name: 'Sarah', message: 'Got it, thanks!', time: 'Yesterday', unread: 0, favorite: true },
@@ -16,9 +20,9 @@ function Chatslist() {
 
     // 3. Filter logic combining both the search text and the filter buttons
     const filteredChats = dummyChats.filter(chat => {
-        const matchesSearch = chat.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                              chat.message.toLowerCase().includes(searchQuery.toLowerCase());
-        
+        const matchesSearch = chat.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            chat.message.toLowerCase().includes(searchQuery.toLowerCase());
+
         if (!matchesSearch) return false;
         if (activeFilter === "unread") return chat.unread > 0;
         if (activeFilter === "favorites") return chat.favorite;
@@ -32,7 +36,21 @@ function Chatslist() {
                 </div>
                 <div className={style.right_header}>
                     <button aria-label="New chat"><LuSquarePlus /></button>
-                    <button aria-label="Menu"><FiMoreVertical /></button>
+                    <div className={style.menuwrapper}>
+                        <button aria-label="Menu"><FiMoreVertical /></button>
+                        {Menu && (
+                            <div className={style.menuDropdownCard} onClick={(e) => e.stopPropagation()}>
+                                <button className={style.menu_btn}>
+                                    <RiPencilLine />
+                                    <span>Photo & video</span>
+                                </button>
+                                <button className={style.menu_btn}>
+                                    <FaRegImages />
+                                    <span>Text</span>
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </header>
 
