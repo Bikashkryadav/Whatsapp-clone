@@ -221,7 +221,22 @@
 
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        opacity: 0;.menu_btn {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    text-align: left;
+    border-radius: 10px;
+}
         transform: translateY(-4px);
     }
     to {
