@@ -30,7 +30,7 @@ function Channels() {
                 </div>
                 
                 <div className={style.right_header}>
-                    {/* 1. Add/Create Channel Menu Pair */}
+                    
                     <div className={style.menuWrapper}>
                         <button 
                             className={style.btn} 
