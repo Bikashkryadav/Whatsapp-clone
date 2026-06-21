@@ -11,7 +11,7 @@ function Listchat({ middlepage }) {
 
     return (
         <div className={style.ListchatContainer}>
-            {/* Conditionals to switch sub-panels based on Sidenav value */}
+            
             {middlepage === "Chats" && <Chatslist />}
 
             {middlepage === "Status" && (
