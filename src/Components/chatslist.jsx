@@ -54,7 +54,6 @@ function Chatslist() {
                 </div>
             </header>
 
-            {/* Search Bar Section */}
             <div className={style.searchContainer}>
                 <div className={style.searchWrapper}>
                     <LuSearch className={style.searchIcon} />
