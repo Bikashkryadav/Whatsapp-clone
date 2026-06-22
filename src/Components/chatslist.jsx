@@ -5,11 +5,14 @@ import { FiMoreVertical } from 'react-icons/fi'
 import { IoPersonSharp } from 'react-icons/io5';
 import { RiPencilLine } from 'react-icons/ri';
 import { FaRegImages } from 'react-icons/fa';
+
 function Chatslist() {
     const [Menu, setMenu] = useState(false)
+    
     const handelfalse = () => {
         setMenu(false)
     }
+
     const dummyChats = [
         { id: 1, name: 'Alex', message: 'Hey, are we still on for today?', time: '11:45 AM', unread: 2, favorite: false },
         { id: 2, name: 'Project Group', message: 'Updated the repository', time: '10:12 AM', unread: 0, favorite: true },
@@ -26,19 +29,40 @@ function Chatslist() {
         if (!matchesSearch) return false;
         if (activeFilter === "unread") return chat.unread > 0;
         if (activeFilter === "favorites") return chat.favorite;
-        return true; 
+        return true;
     });
+
     return (
-        <>
+        /* Wrapped everything in a container div to catch clicks anywhere outside the menu */
+        <div className={style.mainWrapper} onClick={handelfalse}>
             <header className={style.header}>
                 <div className={style.left_header}>
                     <h2>WhatsApp</h2>
                 </div>
                 <div className={style.right_header}>
-                    <button aria-label="New chat"><LuSquarePlus /></button>
+                    <button 
+                        className={style.right_header_btn} 
+                        aria-label="New chat"
+                        onClick={(e) => e.stopPropagation()} // Keeps menu state steady
+                    >
+                        <LuSquarePlus />
+                    </button>
+                    
                     <div className={style.menuwrapper}>
-                        <button aria-label="Menu" onClick={()=>{setMenu(!Menu)}}><FiMoreVertical /></button>
+                        <button 
+                            className={style.right_header_btn} 
+                            aria-label="Menu" 
+                            /* FIXED: Added 'e' parameter here so e.stopPropagation works */
+                            onClick={(e) => { 
+                                e.stopPropagation(); 
+                                setMenu(!Menu); 
+                            }}
+                        >
+                            <FiMoreVertical />
+                        </button>
+                        
                         {Menu && (
+                            /* FIXED: Prevent clicking inside the menu card from triggering handelfalse */
                             <div className={style.menuDropdownCard} onClick={(e) => e.stopPropagation()}>
                                 <button className={style.menu_btn}>
                                     <RiPencilLine />
@@ -54,7 +78,7 @@ function Chatslist() {
                 </div>
             </header>
 
-            <div className={style.searchContainer}>
+            <div className={style.searchContainer} onClick={(e) => e.stopPropagation()}>
                 <div className={style.searchWrapper}>
                     <LuSearch className={style.searchIcon} />
                     <input
@@ -68,7 +92,7 @@ function Chatslist() {
             </div>
 
             {/* Filter Navigation Pills */}
-            <div className={style.filterContainer}>
+            <div className={style.filterContainer} onClick={(e) => e.stopPropagation()}>
                 <button
                     className={`${style.filterPill} ${activeFilter === 'all' ? style.activePill : ''}`}
                     onClick={() => setActiveFilter('all')}
@@ -113,7 +137,7 @@ function Chatslist() {
                     <div className={style.noChats}>No chats found</div>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 
