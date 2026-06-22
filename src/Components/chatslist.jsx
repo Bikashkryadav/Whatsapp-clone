@@ -14,11 +14,9 @@ function Chatslist() {
         { id: 3, name: 'Sarah', message: 'Got it, thanks!', time: 'Yesterday', unread: 0, favorite: true },
     ];
 
-    // 2. State for tracking search queries and active filter pills
     const [searchQuery, setSearchQuery] = useState("");
     const [activeFilter, setActiveFilter] = useState("all"); // 'all' | 'unread' | 'favorites'
 
-    // 3. Filter logic combining both the search text and the filter buttons
     const filteredChats = dummyChats.filter(chat => {
         const matchesSearch = chat.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             chat.message.toLowerCase().includes(searchQuery.toLowerCase());
