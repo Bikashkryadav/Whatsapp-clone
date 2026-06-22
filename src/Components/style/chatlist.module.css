@@ -206,7 +206,6 @@ transition: all 0.2s ease;
     display: inline-block;
 }
 
-/* The context container menu dropdown card */
 .menuDropdownCard {
     position: absolute;
     top: 100%;
@@ -219,13 +218,10 @@ transition: all 0.2s ease;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     z-index: 200;
     animation: fadeIn 0.15s ease-out;
-    padding: 6px; /* Creates vertical breathing room inside the card container */
-    min-width: 160px; /* Ensures text doesn't squeeze together layout-wise */
+    padding: 6px; 
+    min-width: 160px; 
 }
-
-/* Row elements inside the dropdown card */
 .menu_btn {
-    width: 100%; /* Makes the clickable button container span across the full card width */
     background: none;
     border: none;
     border-radius: 10px;
@@ -233,9 +229,8 @@ transition: all 0.2s ease;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px; /* Adds space between your lock icon and the text */
-    padding: 10px 16px; /* Comfortable click targets for mobile and desktop cursors */
-    cursor: pointer;
+    gap: 12px; 
+    padding: 10px 16px; 
     font-size: 14px;
     transition: background-color 0.2s ease;
     text-align: left;
