@@ -3,6 +3,8 @@ import style from "./style/chatlist.module.css"
 import { LuSquarePlus, LuSearch } from 'react-icons/lu'
 import { FiMoreVertical } from 'react-icons/fi'
 import { IoPersonSharp } from 'react-icons/io5';
+import { RiPencilLine } from 'react-icons/ri';
+import { FaRegImages } from 'react-icons/fa';
 function Chatslist() {
     const [Menu, setMenu] = useState(false)
     const handelfalse = () => {
@@ -24,7 +26,7 @@ function Chatslist() {
         if (!matchesSearch) return false;
         if (activeFilter === "unread") return chat.unread > 0;
         if (activeFilter === "favorites") return chat.favorite;
-        return true; // 'all'
+        return true; 
     });
     return (
         <>
@@ -35,7 +37,7 @@ function Chatslist() {
                 <div className={style.right_header}>
                     <button aria-label="New chat"><LuSquarePlus /></button>
                     <div className={style.menuwrapper}>
-                        <button aria-label="Menu"><FiMoreVertical /></button>
+                        <button aria-label="Menu" onClick={()=>{setMenu(!Menu)}}><FiMoreVertical /></button>
                         {Menu && (
                             <div className={style.menuDropdownCard} onClick={(e) => e.stopPropagation()}>
                                 <button className={style.menu_btn}>

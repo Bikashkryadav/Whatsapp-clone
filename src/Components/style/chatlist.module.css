@@ -15,6 +15,7 @@ margin: 0;
 .right_header {
 display: flex;
 gap: 12px;
+position: relative;
 }
 
 .right_header button {
@@ -208,8 +209,8 @@ transition: all 0.2s ease;
 /* The context container menu dropdown card */
 .menuDropdownCard {
     position: absolute;
-    top: 100%; 
-    right: 10px;
+    top: 100%;
+    left: 10px;
     border-radius: 18px;
     border: 1px solid #2d2e2e;
     background-color: #161717;
