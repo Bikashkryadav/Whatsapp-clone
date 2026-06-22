@@ -15,7 +15,7 @@ function Chatslist() {
     ];
 
     const [searchQuery, setSearchQuery] = useState("");
-    const [activeFilter, setActiveFilter] = useState("all"); // 'all' | 'unread' | 'favorites'
+    const [activeFilter, setActiveFilter] = useState("all");
 
     const filteredChats = dummyChats.filter(chat => {
         const matchesSearch = chat.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
