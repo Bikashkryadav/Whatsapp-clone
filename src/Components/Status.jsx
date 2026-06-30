@@ -22,7 +22,7 @@ function Status() {
     ];
 
     return (
-        /* 1. Clicking anywhere out here safely clears active panels */
+        
         <div className={style.placeholderView} onClick={handelfalse}>
             <header className={style.header}>
                 <div className={style.left_header}>
@@ -30,12 +30,12 @@ function Status() {
                 </div>
                 
                 <div className={style.right_header}>
-                    {/* Add Status action pair */}
+                    
                     <div className={style.menuWrapper}>
                         <button 
                             className={style.btn} 
                             onClick={(e) => { 
-                                e.stopPropagation(); // 2. Prevents handelfalse from firing right away
+                                e.stopPropagation();
                                 setaddbar(!addbar); 
                                 setmenubar(false); 
                             }} 
