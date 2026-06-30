@@ -8,7 +8,7 @@ function Rightside({ page = "default" }) {
     return (
         <>
             <div className={style.Rightside}>
-                {/* Default Landing View (Fixed the & to &&) */}
+            
                 {page === "default" && (
                     <div className={style.defaultView}>
                         <div className={style.button_section}>
