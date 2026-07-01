@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import style from "./style/Channels.module.css"
 import { FiMoreVertical } from 'react-icons/fi'
 import { LuPlus } from 'react-icons/lu'
-import { LuRadio } from 'react-icons/lu' // Added a clean channel/broadcast icon
+import { LuRadio } from 'react-icons/lu' 
 import { MdOutlineExplore } from 'react-icons/md'
 
 function Channels() {
     const [addmenu, setaddmenu] = useState(false)
     const [moremenu, setmoremenu] = useState(false)
 
-    // Closes all dropdowns when clicking anywhere outside
+
     const handleCloseMenus = () => {
         setaddmenu(false);
         setmoremenu(false);
@@ -58,7 +58,7 @@ function Channels() {
                         )}
                     </div>
 
-                    {/* 2. More Options Menu Pair */}
+                
                     <div className={style.menuWrapper}>
                         <button 
                             className={style.btn} 
@@ -83,12 +83,12 @@ function Channels() {
                 </div>
             </header>
 
-            {/* Subtext description */}
+            
             <p className={style.descriptionText}>
                 Stay updated on your favorite topics. Find channels to follow below.
             </p>
 
-            {/* Channels List Body */}
+            
             <div className={style.channelsContent}>
                 <div className={style.sectionDivider}>
                     <span>YOUR CHANNELS</span>
